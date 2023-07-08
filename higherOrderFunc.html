@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고차함수2</title>
+</head>
+<body>
+    <!-- web developer 2023 고차함수 2번째-->
+    <!-- 함수내에서 함수를 값으로 계산하여 나오게 하는 방법. -->
+    <script>
+        // 파이레시피 : 파이에 넣을 과일 갯수와 밀가루 양을 넣기
+        function pieFrame(fruit, wheat){
+            //num은 파이갯수
+            return function (num){
+                return num * fruit * 10 + 'slice ' + num * wheat * 300 + 'g';
+            }
+            console.log(num)
+        }
+        let applePie = pieFrame(1,2);
+        let grapePie = pieFrame(5,2);
+        let pumkinPie = pieFrame(fruit,wheat);
+        //각 파이 만들때 필요한 과일 갯수와 밀가루봉지 갯수
+        // applePie(5) 를 입력하면 애플파이 5개 만들떄 필요한 재료갯수가 계산되어져 나온다.
+    </script>
+    <script>
+        
+    </script>
+</body>
+</html>
