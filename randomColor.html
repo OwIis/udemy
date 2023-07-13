@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤컬러생성</title>
+</head>
+<body>
+    <h1>COLOR</h1>
+    <button id="colorBtn">click me and change!</button>
+
+
+    <script>
+        let colorBtn = document.querySelector('#colorBtn');
+        colorBtn.addEventListener('click', function(){
+            let title = document.querySelector('h1');
+            let body = document.querySelector('body');
+            // floor로 인해 255가 아닌 256이 되어야함. ,,,왜??
+            let randomColor1 = Math.floor(Math.random() * (255 - 0) + 0);
+            let randomColor2 = Math.floor(Math.random() * (255 - 0) + 0);
+            let randomColor3 = Math.floor(Math.random() * (255 - 0) + 0);
+            
+            title.innerText = `rgb(${randomColor1},${randomColor2},${randomColor3})`;
+            body.style.backgroundColor = `rgb(${randomColor1},${randomColor2},${randomColor3})`;
+        })
+
+    </script>
+</body>
+</html>
