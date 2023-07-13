@@ -8,6 +8,7 @@ app.listen(8080, () => {
     console.log("Listen 8080!")
 })
 
-app.use(() =>{
+app.use((req, res) =>{
     console.log("you got the request!");
+    res.send('we got your request, and this is response about your request!')
 })
