@@ -5,7 +5,7 @@ const app = express()
 //     console.log("Listen 3000!")
 // })
 app.listen(8080, () => {
-    console.log("Listen 8080!")
+    console.log("Listen 8080!!~~")
 })
 
 app.get('/', (req, res) => {
@@ -40,7 +40,6 @@ app.post('/cat', (req, res) => {
 //쿼리작업
 app.get('/search', (req, res) => {
     let q = req.query;
-    console.dir(req.query)
     if(!q){
         res.send('nothing founded')
     }
