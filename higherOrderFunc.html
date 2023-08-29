@@ -20,12 +20,52 @@
         }
         let applePie = pieFrame(1,2);
         let grapePie = pieFrame(5,2);
-        let pumkinPie = pieFrame(fruit,wheat);
         //각 파이 만들때 필요한 과일 갯수와 밀가루봉지 갯수
         // applePie(5) 를 입력하면 애플파이 5개 만들떄 필요한 재료갯수가 계산되어져 나온다.
     </script>
     <script>
-        
+        //JS 최신기능들- 함수 호출 시의 스프레드 구문        
+        console.log('인자들 배열적용 : ' + Math.max(1,5,78,343,73,5,47));
+        let spread1 = [1,5,78,343,73,5,47];
+        console.log('spread 사용 전 : ' + Math.max(spread1));
+        console.log('spread 사용 후: ' + Math.max(...spread1));
+        console.log('문자열에 적용하기↓');
+        console.log(...'computer');
+
+
+        //js 최신기능들 - 배열분해
+        let arraynums = [1,35,74,784,895,167335,9023845]
+        let [count, save, ...load] = arraynums;
+
+        //객체분해
+        const objectuser={
+            firstname: 'sumin',
+            lastname:'kim',
+            age: 27,
+            favoriteColor:'orange'
+        }
+        const {age, favoriteColor} = objectuser;
+        //두 특성 변수화
+
+        const { age: afterBorn, favoriteColor: color} = objectuser;
+        //두 특성 다른 이름으로 변수화
+
+        let{ city = 'busan', cookie = 'love'} = objectuser;
+        //새특성 추가
+
+        function fullName(){
+            // return `${objectuser.firstname} ${objectuser.lastname}`
+            //위 방식도 쓸 수 있지만,
+            const {firstname, lastname} = objectuser;
+            return `${firstname} ${lastname}`;
+        }
+        //매개변수 분해, 변수를 자주 쓰게된다면 아예 변수로 만들어서 사용하는게 나음
+
+        function fullname2({firstname, lastname}){
+            return `${firstname} ${lastname}`;
+        }
+        //위 내용 더 짧게 쓰기. 단 불러낼때느 fullname2(objectuser)를 써야함
+
     </script>
 </body>
 </html>
