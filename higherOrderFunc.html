@@ -82,18 +82,55 @@
         }
     </script>
     <script>
-        //fetch 테스트
+        //fetch 테스트, 확인은 깃헙 임시화면으로는 불가능. cafe24로는 정상작동함.
         fetch("https:///swapi.dev/api/people/1/")
         .then((res) => {
             console.log('hi', res);
-            //return res.json();
+            return res.json();
         })
-        // .then(data =>{
-        //     console.log(data.name)
-        // })
+        .then(data =>{
+            console.log(data.name)
+            console.log(data)
+        })
         .catch((e) => {
             console.log('error',e)
         })
+    </script>
+    
+    <script>
+        //팩토리함수
+        function donutSize(a,b,donutcolor){
+            const donutSizeBox  = {};
+            donutSizeBox.a = a;
+            donutSizeBox.b = b;
+            donutSizeBox.donutcolor = donutcolor;
+            return donutSizeBox;
+        }
+
+        //생성자함수
+        function pieSize(a,b,piecolor){
+            this.a = a;
+            this.b = b;
+            this.piecolor = piecolor;
+        }
+        let pie1 = new pieSize(2,3,'reddish');
+        //this가 new 연산자의 영향을 받아 this가 활성화됨.
+
+        //class 함수
+        class BowlSize{     //class의 첫글자는 대문자가 일반적. class는 객체생성하기 위한 템플릿.
+            constructor(a,b,bowlcolor){     //class와 constructor는 같이씀.
+                this.a = a;
+                this.b = b;
+                this.bowlcolor = bowlcolor;
+            }
+            checkQual(){
+                return `${this.bowlcolor} is perfect!`;
+            }
+        }
+        let bowl1 = new BowlSize(5,10,'teal');
+        //class 함수도 new와 함께 써야 작동한다. 
+        //생산자 함수와 class함수에 차이가 잇지만 정확하게는 잘 모르겟다. 말이어려움;
+
     </script>
 </body>
 </html>
